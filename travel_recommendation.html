@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Bloom</title>
     <link rel="stylesheet" href="travel_recommendation.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'">
+    <style>
+        body {
+            background-image: url(images/timo-wagner-fT6-YkB0nfg-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,9 +25,10 @@
             <li>
                 <form>
                     <div class="search">
-                        <span class="search-icon material-symbols-outlined">search</span>
-                        <input class="search-input" type="search" placeholder="find your destination" />
+                        <input class="search-input" type="text" placeholder="find your destination" />
+                        <span class="search-icon material-symbols-outlined" title="Find">search</span>
                     </div>
+                    <span class="search-icon search-icon-clear material-symbols-outlined" title="Clear">close</span>
                 </form>
             </li>
             <li><a href="home.html">Home</a></li>
@@ -25,7 +36,20 @@
             <li><a href="contact-us.html">Contact Us</a></li>
         </ul>
     </nav>
-    <main>
+    <section>
+        <div class="left-vert">
+            <span class="material-symbols-outlined">crop_square</span>
+            <span class="material-symbols-outlined">crop_square</span>
+            <span class="material-symbols-outlined">crop_square</span> 
+        </div>
+        <div class="mid-vert">
+            <h1 class="main-headline">Where To Next?</h1>
+        </div>
+        <div class="right-vert"></div>
+    </section>
+
+
+        <!-- <main>
         <h1>Main Heading</h1>
         <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Turpis quisque convallis dolor enim neque taciti aptent. Facilisis pellentesque leo faucibus faucibus pharetra nullam. Integer vehicula vitae velit torquent sociosqu faucibus eleifend maximus montes. Sapien adipiscing himenaeos elementum dolor amet dapibus mattis placerat. Maecenas justo iaculis porta nascetur efficitur bibendum. Leo faucibus himenaeos congue at, praesent primis nibh. Nascetur lectus curabitur nisl lacus phasellus conubia.</p>
         <p>Scelerisque dui semper cursus eget netus tincidunt. Eu class tristique enim accumsan purus. Nunc quisque cursus elit sollicitudin volutpat congue. Suspendisse vivamus nostra nostra mattis feugiat porta proin tortor vivamus. Elit tortor magnis imperdiet pulvinar nullam. Aptent mi vulputate ornare dapibus in netus arcu tempor. Cubilia posuere felis himenaeos varius varius. Fermentum quisque platea tempor class a ut. Tempor convallis libero suspendisse penatibus pellentesque eget erat! Vulputate augue himenaeos fringilla conubia, pulvinar ridiculus litora maximus.</p>
@@ -52,7 +76,7 @@
         <p>Congue torquent sapien amet tempus, condimentum justo. Aenean mauris laoreet maecenas viverra, quam porta nostra felis. Egestas lobortis aliquet dictumst malesuada; mi pretium natoque. Erat ultrices cursus per enim sollicitudin gravida. Aenean varius ultricies feugiat inceptos cubilia. Eu lectus ut laoreet sem vulputate volutpat massa netus. Faucibus mollis ante non placerat bibendum viverra mattis erat.</p>
         <p>Integer primis facilisi nostra senectus penatibus rhoncus malesuada bibendum. Adipiscing curabitur suspendisse taciti erat sagittis cras phasellus pharetra. Consectetur consectetur efficitur a suscipit mollis. Tempus placerat nascetur per; curabitur integer urna. Ex sit tristique malesuada adipiscing molestie dictum ultricies. Diam hac etiam sollicitudin neque suscipit tempus dictum imperdiet. Hendrerit litora ullamcorper volutpat, dapibus nascetur faucibus. Eleifend netus volutpat efficitur eros pulvinar nisi.</p>
         <p>Dictum ut posuere phasellus efficitur vestibulum. Nostra potenti eget ipsum pretium finibus est magna. Dictum finibus scelerisque magnis libero, elit facilisi nam. Placerat risus sollicitudin dolor ligula a nullam iaculis quisque ligula. Praesent lacus condimentum sit ornare curae mauris pulvinar habitant. Montes molestie mus sagittis dapibus fusce euismod dui. Integer libero sollicitudin gravida odio sapien duis phasellus. Tristique sagittis morbi porta lacus morbi dui volutpat. Faucibus duis aliquet mollis lacus condimentum nam et. Congue convallis condimentum diam maximus sit finibus.</p>
-    </main>
+    </main> -->
     <script></script>
 </body>
 </html>

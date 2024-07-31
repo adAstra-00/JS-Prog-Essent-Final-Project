@@ -2,11 +2,15 @@
     --main-color: #01014d;
     --secondary-color: #f9f9f9;
     --accent-color: #d83da2;
+    --border-radius-rounded-square: 5px;
+    --border-radius-pill: 15px;
+    --border-radius-circle: 50%;
 } /* only variables > putting things in "root" blocks the user from chooosing their onw values in the browser*/
 
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 } /*The asterisk (*) is known as the CSS universal selectors. It can be used to select any and all types of elements in an HTML page.*/
 
 html {
@@ -15,7 +19,9 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     font-size: 1.6rem; /* 1.6 * 10px = 16px. See https://www.aleksandrhovhannisyan.com/blog/62-5-percent-font-size-trick/ */
 }
 body::-webkit-scrollbar {
@@ -30,7 +36,8 @@ body::-webkit-scrollbar-thumb {
 
 nav {
     background-color: var(--main-color);
-    box-shadow: 3px 3px 5px grey;
+    box-shadow: 0 0 3px 0 grey;
+    
 }
 nav ul {
     width: 100%;
@@ -65,24 +72,52 @@ nav li:first-child {
 }
 
 .search {
-    width: max-content;
     display: flex;
     align-items: center;
-    padding: 2px;
-    border-radius: 28px;
+    border-radius: var(--border-radius-pill);
     background: lightgray;
 }
 .search-input {
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    padding: 3px 0 3px 8px;
-    border-radius: 28px;
+    padding: 3px 3px 3px 8px;
     outline: none;
     border: none;
-    flex: 1;
+    /* field-sizing: content; /* makes input box the same size as the placeholder text */
     background-color: transparent;
     color: grey;
 }
+.search-input::-webkit-input-placeholder {
+    font-style: italic;
+}
+.search:has(.search-input:not(:placeholder-shown)) ~ .search-icon-clear {
+    visibility: visible;
+}
 .search-icon {
     color: grey;
+    padding: 2px;
+    /* background-color: lightgrey; */
+    margin: 2px;
+    border-radius: var(--border-radius-circle);
+}
+.search-icon-clear {
+    visibility: hidden;
+}
+
+
+section {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.left-vert{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 30px;
+}
+.main-headline {
+    font-variant: small-caps;
+    font-size: 7rem;
+    
 }
