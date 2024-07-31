@@ -19,11 +19,12 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     height: 100vh;
     font-size: 1.6rem; /* 1.6 * 10px = 16px. See https://www.aleksandrhovhannisyan.com/blog/62-5-percent-font-size-trick/ */
 }
+
+
+/** ↓ scroll bar look -------------------------------------------- */
 body::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -33,13 +34,24 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
     background: var(--accent-color);
 }
+/** ↑ scroll bar look -------------------------------------------- */
 
-nav {
+.body-container { /** covers whole body - boilerplate */
+    /** needed for the children to occupy the whole height of the body */
+    /** without unwanted margins, etc */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.navbar {
     background-color: var(--main-color);
     box-shadow: 0 0 3px 0 grey;
     
 }
-nav ul {
+.navbar ul {
     width: 100%;
     list-style: none;
     display: flex;
@@ -47,15 +59,15 @@ nav ul {
     justify-content: flex-end;
     align-items: center;
 }
-nav li {
+.navbar li {
     height: 50px;
 }
-nav form {
+.navbar form {
     height: 100%;
     display: flex;
     align-items: center;
 }
-nav a {
+.navbar a {
     height: 100%;
     padding: 0 20px;
     text-decoration: none;
@@ -63,21 +75,22 @@ nav a {
     align-items: center;
     color: var(--secondary-color)
 }
-nav li:not(:first-child, :nth-child(2)) a:hover {
+.navbar li:not(:first-child, :nth-child(2)) a:hover {
     background-color: var(--accent-color);
     color: var(--main-color);
 }
-nav li:first-child {
+.navbar li:first-child {
     margin-right: auto;
 }
 
-.search {
+/** ↓ search widget -------------------------------------------- */
+.search { /** the whole thing */
     display: flex;
     align-items: center;
     border-radius: var(--border-radius-pill);
     background: lightgray;
 }
-.search-input {
+.search-input { /** where the user writes the search term */
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     padding: 3px 3px 3px 8px;
@@ -87,12 +100,20 @@ nav li:first-child {
     background-color: transparent;
     color: grey;
 }
-.search-input::-webkit-input-placeholder {
+.search-input::-webkit-input-placeholder { /** the placeholder's format */
     font-style: italic;
 }
+
+/** ↓↓ COOL & IMPORTANT: */
+    /** when div class "search" (HAS) a child with class "search-input" */
+    /** and that child does (NOT) have its placeholder shown */
+    /** then set the properties for the class named "search-icon-clear" */
+    /** which is a SIBLING (~) of the div class "search" */
 .search:has(.search-input:not(:placeholder-shown)) ~ .search-icon-clear {
-    visibility: visible;
+    visibility: visible; /** this makes the X icon appear when there's text */
 }
+/** ↑↑ COOL & IMPORTANT: */
+
 .search-icon {
     color: grey;
     padding: 2px;
@@ -101,23 +122,43 @@ nav li:first-child {
     border-radius: var(--border-radius-circle);
 }
 .search-icon-clear {
-    visibility: hidden;
+    visibility: hidden; /** X icon is initially hidden */ 
+    /** "visibility" instead of "display": icon still occupies space*/
 }
+/** ↑ search widget -------------------------------------------- */
 
 
-section {
+
+/*! ↓↓ figure this out......*/
+.central-body {
     display: flex;
     flex-direction: row;
     height: 100%;
 }
-.left-vert{
+.left-vertical {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: auto;
+    position: relative;
+}
+.socmed{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    width: 30px;
+    position: absolute;
 }
+.socmed span{
+    margin: 0;
+    padding: 0;
+    color: red;
+}
+/*! ↑↑ figure this out......*/
+
+
+
+
 .main-headline {
     font-variant: small-caps;
     font-size: 7rem;
-    
 }
